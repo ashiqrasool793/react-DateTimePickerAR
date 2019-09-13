@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import DesktopDateTimePicker from './DesktopDateTimePicker/DesktopDateTimePicker'
 
 class SamplePage extends Component {
@@ -21,7 +22,19 @@ class SamplePage extends Component {
             dateSelected: dateSelected
         });
     }
-    
+
+    handleSubmit = () => {
+        console.log("Date: " + this.state.dateSelected + " Time: " + this.state.timeSelected)
+    }
+
+    handleCancel = () => {
+        this.setState({
+            dateSelected: '',
+            timeSelected: ''
+        }, () => console.log("Date: " + this.state.dateSelected + " Time: " + this.state.timeSelected));
+        
+    }
+
     render() {
         const data = [
             { "name": "10:00" },
@@ -45,11 +58,13 @@ class SamplePage extends Component {
             { "name": "11:00" },
         ];
         return (
-            <DesktopDateTimePicker
-                getTime = {this.getSelectedTime}
-                getDate = {this.getSelectedDate}
-                timeList = {data}
-            />
+                <DesktopDateTimePicker
+                    getTime={this.getSelectedTime}
+                    getDate={this.getSelectedDate}
+                    timeList={data}
+                    onClick={this.handleSubmit}
+                    onCancel={this.handleCancel}
+                />
         )
     }
 }

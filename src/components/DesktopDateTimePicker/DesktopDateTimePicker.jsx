@@ -14,10 +14,10 @@ const DesktopDateTimePicker = (props) => {
                     <TimePicker getTime={props.getTime} timeList={props.timeList}></TimePicker>
                 </div>
                 <div className="Cal-ctaWrapper">
-                <Button style={{margin: '10px', width: '100px', color:'red', backgroundColor:'white'}} variant="contained" >
+                <Button onClick={props.onCancel} style={{margin: '10px', width: '100px', color:'red', backgroundColor:'white'}} variant="contained" >
                     Cancel
                 </Button>
-                <Button style={{ width: '100px', backgroundColor:'red'}} variant="contained" color="secondary" >
+                <Button onClick={props.onClick} style={{ width: '100px', backgroundColor:'red'}} variant="contained" color="secondary" >
                     Book
                 </Button>
                 </div>

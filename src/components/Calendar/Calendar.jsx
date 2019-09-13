@@ -31,7 +31,17 @@ const materialTheme = createMuiTheme({
     }
   });
 class Calendar extends Component {
-    state = {  }
+   constructor(props) {
+     super(props)
+
+     this.state = {
+       date: new Date()
+     }
+   }
+
+   changeDate = () => {
+     this.setState({date: new Date()})
+   }
     render() { 
         return (
             <ThemeProvider theme={materialTheme}>
@@ -44,8 +54,8 @@ class Calendar extends Component {
                 margin="normal"
                 id="date-picker-inline"
                 label="Date picker inline"
-                value={() => { }}
-                onChange={() => { }}
+                value={this.state.date}
+                onChange={this.changeDate}
                 //views={["date", "month", "year"]}
                 KeyboardButtonProps={{
                   'aria-label': 'change date',
