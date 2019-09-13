@@ -1,5 +1,5 @@
 .Cal-container {
-  height: 400px;
+  height: 460px;
   width: 600px;
   background-color: white;
   border-radius: 6px;
@@ -10,7 +10,7 @@
   left: 50%;
   margin-left: -300px;
   top: 50%;
-  margin-top: -200px;
+  margin-top: -230px;
   flex-direction: column;
   display: flex;
 }
@@ -38,4 +38,12 @@
   font-weight: 500;
   margin: 20px;
   float: right;
+}
+
+.Cal-ctaWrapper {
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid rgb(231, 231, 231);
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
