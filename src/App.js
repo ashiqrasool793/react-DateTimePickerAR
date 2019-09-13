@@ -1,9 +1,9 @@
 import React from 'react';
-import DesktopDateTimePicker from './components/DesktopDateTimePicker/DesktopDateTimePicker';
+import SamplePage from './components/SamplePage';
 
 function App() {
   return (
-          <DesktopDateTimePicker></DesktopDateTimePicker>
+          <SamplePage></SamplePage>
   );
 }
 

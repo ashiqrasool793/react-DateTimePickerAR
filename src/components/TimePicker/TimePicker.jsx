@@ -13,39 +13,19 @@ class TimePicker extends React.Component {
         }
     }
 
-    timeSelection = (idx) => {
+    timeSelection = (idx, val) => {
+        console.log(val)
+        this.props.getTime(val)
         this.setState({
             timeSelected: idx
         })
     }
     render() {
-        const data = [
-            { "name": "10:00" },
-            { "name": "11:00" },
-            { "name": "12:00" },
-            { "name": "13:00" },
-            { "name": "14:00" },
-            { "name": "15:00" },
-            { "name": "16:00" },
-            { "name": "17:00" },
-            { "name": "18:00" },
-            { "name": "19:00" },
-            { "name": "20:00" },
-            { "name": "21:00" },
-            { "name": "22:00" },
-            { "name": "23:00" },
-            { "name": "00:00" },
-            { "name": "11:00" },
-            { "name": "11:00" },
-            { "name": "11:00" },
-            { "name": "11:00" },
-        ];
-
         return (
             <div className="timeContainer">
-                {data.map(function (d, idx) {
+                {this.props.timeList.map(function (d, idx) {
                     return (
-                        <div onClick={() => this.timeSelection(idx)} className="timeList" key={idx}>
+                        <div onClick={() => this.timeSelection(idx, d.name)} className="timeList" key={idx}>
                             <div className="timeSelect">
                                 <div>{d.name}</div>
                                 {this.state.timeSelected===idx ?
