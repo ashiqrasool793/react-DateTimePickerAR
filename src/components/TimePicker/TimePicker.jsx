@@ -23,7 +23,7 @@ class TimePicker extends React.Component {
     render() {
         return (
             <div className="timeContainer">
-                {this.props.timeList.map(function (d, idx) {
+                {this.props.timeList.map((d, idx) => {
                     return (
                         <div onClick={() => this.timeSelection(idx, d.name)} className="timeList" key={idx}>
                             <div className="timeSelect">
