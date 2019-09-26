@@ -4,7 +4,7 @@ import ARCalendar from './components/ARCalendar/index'
 
 function App() {
   return (
-          <ARCalendar></ARCalendar>
+          <SamplePage></SamplePage>
   );
 }
 

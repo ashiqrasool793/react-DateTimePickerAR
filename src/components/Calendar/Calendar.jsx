@@ -1,4 +1,4 @@
-import React, { Component }from 'react';
+import React, { useState }from 'react';
 import {
     MuiPickersUtilsProvider,
     DatePicker,
@@ -13,10 +13,17 @@ const materialTheme = createMuiTheme({
       MuiPickersDay: {
         daySelected: {
           backgroundColor: red["500"],
+          "&:hover": {
+            backgroundColor: 'light grey',
+            color: 'black',
+          }
         },
         current: {
           color: red["500"],
         },
+        hover: {
+          color: red["500"],
+        }
       },
       MuiPickersCalendarHeader: {
         iconButton: {
@@ -30,19 +37,10 @@ const materialTheme = createMuiTheme({
       }
     }
   });
-class Calendar extends Component {
-   constructor(props) {
-     super(props)
+const Calendar = () => {
+ 
+      const [date, changeDate] = useState(new Date());
 
-     this.state = {
-       date: new Date()
-     }
-   }
-
-   changeDate = () => {
-     this.setState({date: new Date()})
-   }
-    render() { 
         return (
             <ThemeProvider theme={materialTheme}>
 
@@ -54,8 +52,8 @@ class Calendar extends Component {
                 margin="normal"
                 id="date-picker-inline"
                 label="Date picker inline"
-                value={this.state.date}
-                onChange={this.changeDate}
+                value={date}
+                onChange={changeDate}
                 //views={["date", "month", "year"]}
                 KeyboardButtonProps={{
                   'aria-label': 'change date',
@@ -66,6 +64,5 @@ class Calendar extends Component {
           </ThemeProvider>
           );
     }
-}
  
 export default Calendar;

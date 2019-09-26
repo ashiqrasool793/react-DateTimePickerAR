@@ -66,12 +66,14 @@ class ARCalendar extends Component {
     render() {
         return (
             <div style={{position: 'absolute', top:'50%', left: '50%', marginTop: '-100px', marginLeft:'-150px'}}>
-                <table style={{height: '50px', width: '300px'}}>        
+                <table style={{height: '50px', width: '300px', textAlign: 'center'}}>        
                     <thead>
                         <tr>
-                            <th colSpan="7" style={{padding:'10px'}}>
+                            <th colSpan="1" onClick={() => alert("DAS")}>{'<'}</th>
+                            <th colSpan="5" style={{padding:'10px'}}>
                             {this.state.currentDateContext.format("MMMM")}
                             </th>
+                            <th colSpan="1"> {'>'} </th>
                         </tr>
                     </thead>
                     <tbody>
